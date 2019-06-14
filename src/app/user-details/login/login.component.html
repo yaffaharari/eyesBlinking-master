@@ -1,0 +1,11 @@
+<div style=" position: fixed;top: 20%;left: 50%;  margin-top: -50px;margin-left: -100px;">
+  <img src="assets/add_profile_img3.png" width="150px"/>
+  <h1>Eyes Blinking </h1>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <input type="text" formControlName="email" placeholder="enter your email" required #emailFieldId style="margin: 5px;"><br>
+    <input type="password" formControlName="password" placeholder="enter your password " required #passFieldId style="margin: 5px;"><br>
+    <button type="submit" [disabled]="!loginForm.valid" (click)="loginClicked()">Login</button>
+    <button mat-raised-button color="primary" type="button" (click)="registerClickEvent(emailFieldId.value, passFieldId.value)" >Register</button>
+  </form>
+  <!--<div *ngIf="!loginForm.controls.email.value">email is required</div>-->
+</div>
